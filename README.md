@@ -1,13 +1,34 @@
-# Karbon Starter Template
-This is a repo storing starter templates for [Karbon projects](https://github.com/storipres/karbon), which allows users to quickly start a new Karbon project.
+# Karbon scratch starter
 
-## How to Use
-Using this template is very simple, just follow these steps:
+Look at the [Karbon document](https://developers.storipress.com/) to learn more.
 
-1. Run `npm init @storipress/karbon [template name]` to create a new project.
-2. Copy the `.env.example` file and rename it to `.env`, then fill in the Storipress API related information in the `.env` file.
-3. In the terminal, run `yarn install` to install the required packages for the project.
-4. In the terminal, run `yarn dev` to start editing the webpage.
+## Setup
 
-## License
-This template uses the MIT license. See the LICENSE file in the project for more information.
+Make sure to install the dependencies:
+
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install
+```
+
+## Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
+yarn dev
+```
+
+## Deployment
+
+```bash
+yarn karbon
+```
+
+Check out the [Karbon deployment document](https://developers.storipress.com/karbon/2gLtVFS6QEkdvKF7fkRng1/deploying-to-storipress/kGmxiaH1UAPw337mdjQ2uN) to learn more.
