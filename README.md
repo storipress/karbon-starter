@@ -1,6 +1,10 @@
 # Karbon Starter Template
 This is a repo storing starter templates for [Karbon projects](https://github.com/storipres/karbon), which allows users to quickly start a new Karbon project.
 
+## Available Templates
+
+- [scratch](https://github.com/storipress/karbon-starter/tree/scratch): A blank template for Karbon projects.
+
 ## How to Use
 Using this template is very simple, just follow these steps:
 
