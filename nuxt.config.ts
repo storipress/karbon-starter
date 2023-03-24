@@ -3,7 +3,16 @@
 import { createArticleRoute, createDeskRoute } from '@storipress/karbon/helper'
 
 export default defineNuxtConfig({
-  modules: ['@storipress/karbon'],
+  vite: {
+    optimizeDeps: {
+      include: [
+        'yup',
+        'p-retry',
+        'lodash'
+      ]
+    }
+  },
+  modules: ['@storipress/karbon', '@vueuse/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/html-validator', 'nuxt-icon', 'nuxt-lodash'],
   routeRules: {
     '/posts/*': { swr: true },
   },
@@ -28,9 +37,25 @@ export default defineNuxtConfig({
   },
 
   karbon: {
+    fullStatic: false,
+    seo: [
+      {
+        preset: 'basic',
+        options: {
+          twitterCard: 'summary_large_image',
+        },
+      },
+      {
+        provider: './karbon/seo/example.ts',
+      },
+    ],
     resources: {
       article: createArticleRoute('/posts/{slug}'),
       desk: createDeskRoute('/desks/{slug}'),
+    },
+    paywall: {
+      enable: true,
+      logo: './assets/logomark.svg',
     },
   },
 })

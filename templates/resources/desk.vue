@@ -3,8 +3,5 @@ const desk = setupDeskPage()
 </script>
 
 <template>
-  <div>
-    <div>Design your desk page</div>
-    <h2>{{ desk.name }}</h2>
-  </div>
+  <DeskArticles :desk="desk" infinite-scroll is-desk-page />
 </template>

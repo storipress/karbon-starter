@@ -8,10 +8,17 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.3.1"
+    "@nuxtjs/html-validator": "^1.2.4",
+    "nuxt": "^3.3.1",
+    "nuxt-icon": "^0.3.3",
+    "nuxt-lodash": "^2.4.1"
   },
   "packageManager": "yarn@3.4.1",
   "dependencies": {
-    "@storipress/karbon": "^0.1.0"
+    "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.6.4",
+    "@storipress/karbon": "^0.1.2",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@vueuse/nuxt": "^9.13.0"
   }
 }
