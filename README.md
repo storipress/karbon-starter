@@ -3,6 +3,7 @@ This is a repo storing starter templates for [Karbon projects](https://github.co
 
 ## Available Templates
 
+- [default](https://github.com/storipress/karbon-starter/tree/default): A prebuild template for Karbon projects.
 - [scratch](https://github.com/storipress/karbon-starter/tree/scratch): A blank template for Karbon projects.
 
 ## How to Use
