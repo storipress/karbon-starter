@@ -1,6 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 // https://developers.storipress.com/karbon/2gLtVFS6QEkdvKF7fkRng1/resources/2YC1RCw9q71PKKjL9B8cXN
-import { createArticleRoute, createDeskRoute } from '@storipress/karbon/helper'
+import { createArticleRoute, createDeskRoute, createAuthorRoute, createTagRoute } from '@storipress/karbon/helper'
 
 export default defineNuxtConfig({
   vite: {
@@ -51,6 +51,8 @@ export default defineNuxtConfig({
     resources: {
       article: createArticleRoute('/posts/{slug}'),
       desk: createDeskRoute('/desks/{slug}'),
+      author: createAuthorRoute('/author/{id}'),
+      tag: createTagRoute('/tag/{slug}'),
     },
     paywall: {
       enable: true,
