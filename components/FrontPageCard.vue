@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
-import type { UseArticleReturn } from '@storipress/karbon'
 
 defineProps<{
-  article: UseArticleReturn
+  // FIXME: import type from @storipress/karbon/helper
+  article: any
   classHeroPhoto?: string
   classHeroPhotoImg?: string
   classArticle?: string

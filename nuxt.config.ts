@@ -5,25 +5,27 @@ import { createArticleRoute, createDeskRoute } from '@storipress/karbon/helper'
 export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
-      include: [
-        'yup',
-        'p-retry',
-        'lodash'
-      ]
-    }
+      include: ['yup', 'p-retry', 'lodash'],
+    },
   },
-  modules: ['@storipress/karbon', '@vueuse/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/html-validator', 'nuxt-icon', 'nuxt-lodash'],
+  modules: [
+    '@storipress/karbon',
+    '@vueuse/nuxt',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/html-validator',
+    'nuxt-icon',
+    'nuxt-lodash',
+  ],
   routeRules: {
     '/posts/*': { swr: true },
   },
   runtimeConfig: {
     storipress: {
-      apiHost: process.env.NUXT_KARBON_API_HOST,
+      apiHost: 'https://api.stori.press',
       apiToken: process.env.NUXT_KARBON_API_TOKEN,
       clientId: process.env.NUXT_KARBON_CLIENT_ID,
-      stripeKey: process.env.NUXT_KARBON_STRIPE_KEY,
       searchKey: process.env.NUXT_KARBON_SEARCH_KEY,
-      searchDomain: process.env.NUXT_KARBON_SEARCH_DOMAIN,
       encryptKey: process.env.NUXT_KARBON_ENCRYPT_KEY,
     },
     public: {
@@ -44,9 +46,6 @@ export default defineNuxtConfig({
         options: {
           twitterCard: 'summary_large_image',
         },
-      },
-      {
-        provider: './karbon/seo/example.ts',
       },
     ],
     resources: {

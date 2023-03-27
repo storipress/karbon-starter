@@ -1,8 +1,7 @@
 <script lang="ts" setup>
-import type { DeskWithURL } from '~/sdk/runtime/composables/desk'
-
 const props = defineProps<{
-  desk: DeskWithURL
+  // FIXME: import type from @storipress/karbon/helper
+  desk: any
   infiniteScroll?: boolean
   isDeskPage?: boolean
 }>()
