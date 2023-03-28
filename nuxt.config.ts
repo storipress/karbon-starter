@@ -22,7 +22,6 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     storipress: {
-      apiHost: 'https://api.stori.press',
       apiToken: process.env.NUXT_KARBON_API_TOKEN,
       clientId: process.env.NUXT_KARBON_CLIENT_ID,
       searchKey: process.env.NUXT_KARBON_SEARCH_KEY,
