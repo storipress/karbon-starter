@@ -13,12 +13,13 @@ const socials = computed(() => Object.entries(site.value?.socialLinks || {}) as 
     <section v-if="site.logo?.url" class="mx-auto">
       <NuxtLink to="/">
         <picture class="text-center">
-          <img
+          <nuxt-img
             :alt="site.publicationName"
             :src="site.logo.url"
             :height="site.logo.height"
             :width="site.logo.width"
-            class="max-h-20 object-contain mx-auto"
+            class="max-h-20 object-contain mx-auto w-full h-auto"
+            loading="lazy"
           />
         </picture>
       </NuxtLink>
