@@ -42,7 +42,7 @@ const isLoggedIn = computed(() => $paywall?.authInfo.value)
       <!-- site logo -->
       <div class="grow order-1 md:order-2">
         <NuxtLink to="/" class="link-hover mx-auto block w-fit">
-          <img :alt="site.publicationName" class="max-h-12 max-w-full" :src="site.logo?.url" />
+            <nuxt-img :alt="site.publicationName" class="max-h-12 max-w-full w-full h-auto" :src="site.logo?.url" />
         </NuxtLink>
       </div>
 

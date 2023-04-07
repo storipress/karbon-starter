@@ -7,8 +7,10 @@ useHead({
 })
 
 onMounted(() => {
-  $paywall.mount()
-  $paywall.checkQuery()
+  setTimeout(() => {
+    $paywall.mount()
+    $paywall.checkQuery()
+  }, 1000)
 })
 
 useAdvertisingHandler((segments) => {
