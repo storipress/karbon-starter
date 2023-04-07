@@ -21,14 +21,16 @@ const { _resolveFromMetaSync } = useResourceResolver()
 <template>
   <article class="group" :class="classArticle">
     <NuxtLink :to="article.url" class="block" :class="classHeroPhoto">
-      <ArticleHeroPhoto
+      <nuxt-img
         v-if="article.cover?.url"
-        width="405"
-        height="270"
+        width="600"
+        height="200"
         :src="article.cover.url"
         :alt="article.cover?.alt"
-        class="rounded-xl object-cover aspect-[3/2] w-full group-hover:brightness-75 transition duration-200 ease-in"
+        class="rounded-xl object-cover aspect-[3/2] w-full h-auto group-hover:brightness-75 transition duration-200 ease-in"
         :class="classHeroPhotoImg"
+        loading="lazy"
+        sizes="sm:100vw md:50vw lg:400px"
       />
       <div
         v-else

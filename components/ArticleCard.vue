@@ -11,11 +11,12 @@ defineProps<{ article: Article }>()
       :to="`/posts/${article.slug}`"
       class="block relative mb-4 aspect-[3/2] bg-neutral-100 rounded-3xl after:content-[''] after:absolute after:inset-0 after:hover:bg-black/10 after:transition-colors after:rounded-3xl duration-500"
     >
-      <img
+      <nuxt-img
         v-if="article.cover?.url"
         :src="article.cover.url"
         :alt="article.cover?.alt"
         class="object-cover w-full h-full rounded-3xl"
+        loading="lazy"
       />
       <div v-else class="aspect-[3/2] bg-gray-100 rounded-3xl transition duration-200 ease-in" />
     </NuxtLink>

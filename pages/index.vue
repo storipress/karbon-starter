@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// reference layout: https://tripoli.aspirethemes.com/
 const { desks } = useDesks()
 const { articles } = useFillArticles(9)
 
