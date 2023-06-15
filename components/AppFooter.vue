@@ -32,19 +32,27 @@ const socials = computed(() => Object.entries(site.value?.socialLinks || {}) as 
     </ul>
 
     <section class="text-center text-sm text-stone-800 dark:text-white">
-      © {{ currentYear }} {{ site.publicationName }} Published with
-      <a href="https://storipress.com/" target="_blank" rel="noreferrer noopener" class="underline hover:no-underline">
-        Storipress
-      </a>
-      &
-      <a
-        href="https://developers.storipress.com/karbon/2gLtVFS6QEkdvKF7fkRng1"
-        target="_blank"
-        rel="noreferrer noopener"
-        class="underline hover:no-underline"
-      >
-        Karbon
-      </a>
+      © {{ currentYear }} {{ site.publicationName }}
+      <div>
+        Published with
+        <a
+          href="https://storipress.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="underline hover:no-underline"
+        >
+          Storipress
+        </a>
+        &
+        <a
+          href="https://developers.storipress.com/karbon/2gLtVFS6QEkdvKF7fkRng1"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="underline hover:no-underline"
+        >
+          Karbon
+        </a>
+      </div>
     </section>
   </footer>
 </template>

@@ -50,7 +50,7 @@ const { resolveFromResource } = useResourceResolver()
     </figure>
 
     <div class="mt-8 font-sans">
-      <ArticleBody />
+      <ArticleBody class="prose lg:prose-lg dark:prose-invert" />
     </div>
   </article>
 </template>

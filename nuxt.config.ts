@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   routeRules: {
     '/posts/*': { swr: true },
   },
+  colorMode: {
+    classSuffix: '',
+  },
   runtimeConfig: {
     storipress: {
       apiToken: process.env.NUXT_KARBON_API_TOKEN,

@@ -1,10 +1,22 @@
 <script lang="ts" setup>
+import logoLight from '~/assets/logo-light.svg'
+import logoDark from '~/assets/logo-dark.svg'
+
 const site = useSite()
 const { $paywall } = useNuxtApp()
 
 const isSearchDialogOpened = ref(false)
 watch(isSearchDialogOpened, (val) => {
   val ? document.body.classList.add('overflow-hidden') : document.body.classList.remove('overflow-hidden')
+})
+
+const colorMode = useColorMode()
+
+const logo = computed(() => {
+  if (colorMode.value === 'dark') {
+    return logoDark
+  }
+  return logoLight
 })
 
 const isLoggedIn = computed(() => $paywall?.authInfo.value)
@@ -42,7 +54,7 @@ const isLoggedIn = computed(() => $paywall?.authInfo.value)
       <!-- site logo -->
       <div class="grow order-1 md:order-2">
         <NuxtLink to="/" class="link-hover mx-auto block w-fit">
-            <nuxt-img :alt="site.publicationName" class="max-h-12 max-w-full w-full h-auto" :src="site.logo?.url" />
+          <nuxt-img :alt="site.publicationName" class="max-h-12 max-w-full h-12 w-full" :src="logo" />
         </NuxtLink>
       </div>
 
@@ -73,12 +85,10 @@ const isLoggedIn = computed(() => $paywall?.authInfo.value)
 </template>
 
 <style lang="scss" scoped>
-.dark-mode {
-  header {
-    @apply border-white;
-  }
-  .subscribe-btn {
-    @apply border-white text-white hover:bg-black hover:text-white;
-  }
+header {
+  @apply dark:border-white;
+}
+.subscribe-btn {
+  @apply dark:border-white dark:text-white dark:hover:bg-black dark:hover:text-white;
 }
 </style>

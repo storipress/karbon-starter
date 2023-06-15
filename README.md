@@ -2,6 +2,9 @@
 
 Look at the [Karbon document](https://developers.storipress.com/) to learn more.
 
+## Logo
+The logo is under the `assets` directory, you can replace it with your own logo.
+
 ## Setup
 
 Make sure to install the dependencies:
