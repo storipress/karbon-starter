@@ -15,9 +15,9 @@ const socials = computed(() => Object.entries(site.value?.socialLinks || {}) as 
         <picture class="text-center">
           <nuxt-img
             :alt="site.publicationName"
-            :src="site.logo.url"
-            :height="site.logo.height"
-            :width="site.logo.width"
+            :src="site.logo?.url"
+            :height="site.logo?.height"
+            :width="site.logo?.width"
             class="max-h-20 object-contain mx-auto w-full h-auto"
             loading="lazy"
           />
