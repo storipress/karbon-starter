@@ -9,7 +9,10 @@ const rightArticle = computed(() => articles.value?.slice(3))
 
 <template>
   <div class="grid w-full m-auto px-5 max-w-[1400px] lg:px-8">
-    <div class="grid lg:gap-x-8 lg:grid-cols-[repeat(12,1fr)] lg:grid-rows-[minmax(2rem,auto)_repeat(2,1fr)]">
+    <div v-if="articles.length === 0">
+      Hi, welcome to Karbon! Looks like you haven't created any articles yet. Please create an article on Storipress.
+    </div>
+    <div v-else class="grid lg:gap-x-8 lg:grid-cols-[repeat(12,1fr)] lg:grid-rows-[minmax(2rem,auto)_repeat(2,1fr)]">
       <div
         class="relative order-2 mt-8 lg:col-[1_/_span_3] after:border-r-0 lg:mt-0 lg:after:border-r-[.5px] after:border-neutral-300 after:absolute after:right-[calc(calc(32px/2)*-1)] after:top-0 after:bottom-0 after:left-auto dark:after:border-neutral-600"
       >
@@ -29,6 +32,7 @@ const rightArticle = computed(() => articles.value?.slice(3))
         </div>
       </div>
       <div
+        v-if="centerArticle"
         class="relative order-0 mt-0 after:border-r-0 lg:col-[4_/_span_6] lg:row-start-1 lg:after:border-r-[.5px] after:border-neutral-300 after:absolute after:right-[calc(calc(32px/2)*-1)] after:top-0 after:bottom-0 after:left-auto dark:after:border-neutral-600"
       >
         <FeaturedCard :article="centerArticle" class-desk="order-1" />
