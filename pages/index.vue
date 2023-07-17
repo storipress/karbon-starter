@@ -8,18 +8,18 @@ const rightArticle = computed(() => articles.value?.slice(3))
 </script>
 
 <template>
-  <div class="grid w-full m-auto px-5 max-w-[1400px] lg:px-8">
+  <div class="m-auto grid w-full max-w-[1400px] px-5 lg:px-8">
     <div v-if="articles.length === 0">
       Hi, welcome to Karbon! Looks like you haven't created any articles yet. Please create an article on Storipress.
     </div>
-    <div v-else class="grid lg:gap-x-8 lg:grid-cols-[repeat(12,1fr)] lg:grid-rows-[minmax(2rem,auto)_repeat(2,1fr)]">
+    <div v-else class="grid lg:grid-cols-[repeat(12,1fr)] lg:grid-rows-[minmax(2rem,auto)_repeat(2,1fr)] lg:gap-x-8">
       <div
-        class="relative order-2 mt-8 lg:col-[1_/_span_3] after:border-r-0 lg:mt-0 lg:after:border-r-[.5px] after:border-neutral-300 after:absolute after:right-[calc(calc(32px/2)*-1)] after:top-0 after:bottom-0 after:left-auto dark:after:border-neutral-600"
+        class="relative order-2 mt-8 after:absolute after:bottom-0 after:left-auto after:right-[calc(calc(32px/2)*-1)] after:top-0 after:border-r-0 after:border-neutral-300 dark:after:border-neutral-600 lg:col-[1_/_span_3] lg:mt-0 lg:after:border-r-[.5px]"
       >
         <div
           v-for="(article, index) in leftArticle"
           :key="index"
-          class="pb-4 mb-4 border-b-[.5px] border-neutral-300 dark:border-neutral-600 last:border-0"
+          class="mb-4 border-b-[.5px] border-neutral-300 pb-4 last:border-0 dark:border-neutral-600"
         >
           <FrontPageCard
             :article="article"
@@ -33,7 +33,7 @@ const rightArticle = computed(() => articles.value?.slice(3))
       </div>
       <div
         v-if="centerArticle"
-        class="relative order-0 mt-0 after:border-r-0 lg:col-[4_/_span_6] lg:row-start-1 lg:after:border-r-[.5px] after:border-neutral-300 after:absolute after:right-[calc(calc(32px/2)*-1)] after:top-0 after:bottom-0 after:left-auto dark:after:border-neutral-600"
+        class="order-0 relative mt-0 after:absolute after:bottom-0 after:left-auto after:right-[calc(calc(32px/2)*-1)] after:top-0 after:border-r-0 after:border-neutral-300 dark:after:border-neutral-600 lg:col-[4_/_span_6] lg:row-start-1 lg:after:border-r-[.5px]"
       >
         <FeaturedCard :article="centerArticle" class-desk="order-1" />
       </div>
@@ -41,7 +41,7 @@ const rightArticle = computed(() => articles.value?.slice(3))
         <div
           v-for="(article, index) in rightArticle"
           :key="index"
-          class="pb-4 mb-4 border-b-[.5px] border-neutral-300 dark:border-neutral-600 last:border-0 last:pb-0 last:mb-0"
+          class="mb-4 border-b-[.5px] border-neutral-300 pb-4 last:mb-0 last:border-0 last:pb-0 dark:border-neutral-600"
         >
           <FrontPageCard
             :article="article"

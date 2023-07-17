@@ -5,7 +5,9 @@ const emit = defineEmits<{
 
 const $dialog = ref(null)
 
-const { searchClient, indexName } = useSearchClient({ queryBy: 'title,author_names,tag_names' })
+const { searchClient, indexName } = useSearchClient({
+  queryBy: 'title,author_names,tag_names',
+})
 
 const { _resolveFromMetaSync } = useResourceResolver()
 
@@ -29,7 +31,7 @@ useIntersectionObserver($dialog, ([{ isIntersecting }]) => {
   <section class="relative z-50">
     <ClientOnly>
       <div
-        class="fixed inset-0 h-screen w-screen backdrop-blur-[2px] antialiased to-black/10 from-black/20 bg-gradient-to-br animate-[fadein_.15s]"
+        class="fixed inset-0 h-screen w-screen animate-[fadein_.15s] bg-gradient-to-br from-black/20 to-black/10 antialiased backdrop-blur-[2px]"
       />
       <AisInstantSearch
         class="fixed inset-0 h-screen w-screen pt-20"
@@ -38,7 +40,7 @@ useIntersectionObserver($dialog, ([{ isIntersecting }]) => {
       >
         <div
           ref="$dialog"
-          class="w-full max-w-[95vw] md:max-w-lg m-auto rounded-lg shadow-xl bg-white animate-[popup_.2s_ease]"
+          class="m-auto w-full max-w-[95vw] animate-[popup_.2s_ease] rounded-lg bg-white shadow-xl md:max-w-lg"
         >
           <AisSearchBox
             v-model="searchInput"
@@ -56,18 +58,18 @@ useIntersectionObserver($dialog, ([{ isIntersecting }]) => {
             placeholder="Search posts, tags and authors"
           />
 
-          <AisHits v-slot="{ items }" class="overflow-y-auto max-h-[calc(100vh-172px)] py-4 px-7">
+          <AisHits v-slot="{ items }" class="max-h-[calc(100vh-172px)] overflow-y-auto px-7 py-4">
             <template v-if="items?.length === 0">
               <p class="no-result text-neutral-400">No matches found</p>
             </template>
 
             <template v-else>
-              <h1 class="uppercase text-xs text-neutral-400 font-semibold mb-1">Posts</h1>
+              <h1 class="mb-1 text-xs font-semibold uppercase text-neutral-400">Posts</h1>
               <NuxtLink
                 v-for="item in items"
                 :key="item.id"
                 :to="_resolveFromMetaSync('article', item)?.url"
-                class="block py-3 px-7 -mx-7 text-neutral-800 font-medium hover:bg-neutral-100"
+                class="-mx-7 block px-7 py-3 font-medium text-neutral-800 hover:bg-neutral-100"
                 @click="onClose"
               >
                 {{ item.title }}

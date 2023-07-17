@@ -9,7 +9,7 @@ const socials = computed(() => Object.entries(site.value?.socialLinks || {}) as 
 </script>
 
 <template>
-  <footer class="py-16 bg-stone-100 dark:bg-stone-800 mt-16">
+  <footer class="mt-16 bg-stone-100 py-16 dark:bg-stone-800">
     <section v-if="site.logo?.url" class="mx-auto">
       <NuxtLink to="/">
         <picture class="text-center">
@@ -18,14 +18,14 @@ const socials = computed(() => Object.entries(site.value?.socialLinks || {}) as 
             :src="site.logo?.url"
             :height="site.logo?.height"
             :width="site.logo?.width"
-            class="max-h-20 object-contain mx-auto w-full h-auto"
+            class="mx-auto h-auto max-h-20 w-full object-contain"
             loading="lazy"
           />
         </picture>
       </NuxtLink>
     </section>
 
-    <ul class="flex gap-4 mx-auto justify-center my-8 flex-wrap">
+    <ul class="mx-auto my-8 flex flex-wrap justify-center gap-4">
       <li v-for="social of socials" :key="social[0]">
         <SocialsButton :type="social[0]" :url="`//${social[1]}`" />
       </li>

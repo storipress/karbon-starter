@@ -40,14 +40,14 @@ const socialMedia = computed(() => [
 </script>
 
 <template>
-  <div class="flex gap-4 justify-end">
+  <div class="flex justify-end gap-4">
     <a
       v-for="media of socialMedia"
       :key="media.type"
       :href="media.url"
       target="_blank"
       rel="noreferrer noopener"
-      class="group flex rounded-full border border-black w-10 h-10 justify-center items-center hover:bg-black dark:bg-stone-800"
+      class="group flex h-10 w-10 items-center justify-center rounded-full border border-black hover:bg-black dark:bg-stone-800"
     >
       <Icon
         :name="media.icon"

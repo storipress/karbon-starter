@@ -30,15 +30,17 @@ const loadMore = async () => {
 <template>
   <section class="px-5 lg:px-8">
     <div class="mb-8">
-      <div class="grid w-full m-auto max-w-[1400px] gap-8 md:grid-cols-2">
+      <div class="m-auto grid w-full max-w-[1400px] gap-8 md:grid-cols-2">
         <div>
           <picture>
-            <img :alt="author.full_name" :src="author.avatar" class="w-24 h-24 rounded-full mb-4" />
+            <img :alt="author.full_name" :src="author.avatar" class="mb-4 h-24 w-24 rounded-full" />
           </picture>
 
-          <h1 class="text-[1.75rem] leading-8 font-medium">{{ author.full_name }}</h1>
+          <h1 class="text-[1.75rem] font-medium leading-8">
+            {{ author.full_name }}
+          </h1>
 
-          <p class="mt-2 text-2xl leading-7 font-normal">{{ author.bio }}</p>
+          <p class="mt-2 text-2xl font-normal leading-7">{{ author.bio }}</p>
 
           <div class="mt-4 text-gray-600 dark:text-neutral-400">
             <a
@@ -47,7 +49,7 @@ const loadMore = async () => {
               :href="`https://${link}`"
               target="_blank"
               rel="noopener"
-              class="underline mr-2"
+              class="mr-2 underline"
               >{{ social }}</a
             >
           </div>
@@ -55,14 +57,14 @@ const loadMore = async () => {
       </div>
     </div>
 
-    <div class="max-w-[1400px] mx-auto pb-16">
-      <div class="grid gap-8 lg:grid-cols-4 sm:grid-cols-2">
+    <div class="mx-auto max-w-[1400px] pb-16">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <ArticleCard v-for="article of articles" :key="article.id" :article="article" />
       </div>
       <button
         v-if="!allDone"
         type="button"
-        class="block mx-auto mt-16 bg-sky-800 rounded-[4px] py-4 px-6 text-white text-xs tracking-[.7px] font-medium hover:bg-black dark:text-black dark:bg-orange-300 dark:hover:bg-white"
+        class="mx-auto mt-16 block rounded-[4px] bg-sky-800 px-6 py-4 text-xs font-medium tracking-[.7px] text-white hover:bg-black dark:bg-orange-300 dark:text-black dark:hover:bg-white"
         @click="loadMore"
       >
         {{ loading ? 'LOADING' : 'LOAD MORE' }}

@@ -28,15 +28,15 @@ const loadMore = async () => {
 </script>
 
 <template>
-  <div class="max-w-[1400px] mx-auto px-8 pb-16">
-    <h1 class="mb-8 text-[40px] leading-[3rem] tracking-[-.5px] font-semibold dark:text-white">Latest</h1>
-    <div class="grid gap-8 lg:grid-cols-4 sm:grid-cols-2">
+  <div class="mx-auto max-w-[1400px] px-8 pb-16">
+    <h1 class="mb-8 text-[40px] font-semibold leading-[3rem] tracking-[-.5px] dark:text-white">Latest</h1>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <ArticleCard v-for="article of articles" :key="article.id" :article="article" />
     </div>
     <button
       v-if="!allDone"
       type="button"
-      class="block mx-auto mt-16 bg-sky-800 rounded-[4px] py-4 px-6 text-white text-xs tracking-[.7px] font-medium hover:bg-black dark:text-black dark:bg-orange-300 dark:hover:bg-white"
+      class="mx-auto mt-16 block rounded-[4px] bg-sky-800 px-6 py-4 text-xs font-medium tracking-[.7px] text-white hover:bg-black dark:bg-orange-300 dark:text-black dark:hover:bg-white"
       @click="loadMore"
     >
       {{ loading ? 'LOADING' : 'LOAD MORE' }}

@@ -7,32 +7,32 @@ const { resolveFromResource } = useResourceResolver()
 </script>
 
 <template>
-  <article class="max-w-[708px] mx-auto px-5">
+  <article class="mx-auto max-w-[708px] px-5">
     <NuxtLink
       :to="`/desks/${article.desk.slug}`"
-      class="text-sky-800 uppercase font-medium text-xs tracking-[.7px] hover:underline dark:text-orange-300"
+      class="text-xs font-medium uppercase tracking-[.7px] text-sky-800 hover:underline dark:text-orange-300"
     >
       {{ article.desk.name }}
     </NuxtLink>
 
     <ArticleTitle
-      class="my-2 font-semibold font-sans dark:text-white text-[1.75rem] leading-8 lg:text-[2.5rem] lg:leading-[3rem]"
+      class="my-2 font-sans text-[1.75rem] font-semibold leading-8 dark:text-white lg:text-[2.5rem] lg:leading-[3rem]"
     />
-    <ArticleBlurb class="text-xl font-sans dark:text-white lg:text-2xl" />
+    <ArticleBlurb class="font-sans text-xl dark:text-white lg:text-2xl" />
 
-    <div class="flex gap-2 flex-wrap mt-4">
+    <div class="mt-4 flex flex-wrap gap-2">
       <NuxtLink
         v-for="author in article.authors"
         :key="author.id"
         :to="resolveFromResource('author', author)?.url || `/author/${author.id}`"
         aria-hidden="true"
         :aria-label="author.full_name"
-        class="block text-xs font-medium uppercase text-gray-600 dark:text-neutral-400 tracking-[.7px] hover:underline"
+        class="block text-xs font-medium uppercase tracking-[.7px] text-gray-600 hover:underline dark:text-neutral-400"
       >
         <span>{{ author.full_name }}</span>
       </NuxtLink>
     </div>
-    <time class="block text-xs mt-2 text-gray-600 dark:text-neutral-400" :datetime="article.published_at">
+    <time class="mt-2 block text-xs text-gray-600 dark:text-neutral-400" :datetime="article.published_at">
       {{ dayjs(article.published_at).format('MMMM DD, YYYY') }}
     </time>
 
@@ -44,13 +44,13 @@ const { resolveFromResource } = useResourceResolver()
 
     <figure>
       <ArticleHeroPhoto v-if="article.cover?.url" :src="article.cover.url" width="668" height="445" class="w-full" />
-      <figcaption v-if="article.cover?.alt" class="text-xs pt-2 text-gray-600 dark:text-neutral-400">
+      <figcaption v-if="article.cover?.alt" class="pt-2 text-xs text-gray-600 dark:text-neutral-400">
         {{ article.cover?.alt }}
       </figcaption>
     </figure>
 
     <div class="mt-8 font-sans">
-      <ArticleBody class="prose lg:prose-lg dark:prose-invert" />
+      <ArticleBody class="prose dark:prose-invert lg:prose-lg" />
     </div>
   </article>
 </template>

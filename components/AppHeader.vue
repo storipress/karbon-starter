@@ -30,11 +30,11 @@ const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
 </script>
 
 <template>
-  <header class="py-5 border-b-[.5px] border-stone-200 dark:border-white">
+  <header class="border-b-[.5px] border-stone-200 py-5 dark:border-white">
     <div
-      class="grid gap-x-4 items-center grid-cols-[auto_2fr_auto] w-full m-auto px-5 max-w-[1400px] md:grid-cols-[1fr_2fr_1fr] lg:px-8"
+      class="m-auto grid w-full max-w-[1400px] grid-cols-[auto_2fr_auto] items-center gap-x-4 px-5 md:grid-cols-[1fr_2fr_1fr] lg:px-8"
     >
-      <div class="uppercase flex gap-x-2 order-2 items-center ml-auto md:order-1 md:ml-0">
+      <div class="order-2 ml-auto flex items-center gap-x-2 uppercase md:order-1 md:ml-0">
         <!-- light/dark mode toggle button -->
         <div
           v-if="$colorMode.value === 'light'"
@@ -43,25 +43,25 @@ const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
           @click="$colorMode.preference = 'dark'"
         >
           <Icon name="material-symbols:dark-mode" />
-          <span class="leading-4 tracking-[.044rem] font-medium text-xs hidden lg:block hover:underline">Dark</span>
+          <span class="hidden text-xs font-medium leading-4 tracking-[.044rem] hover:underline lg:block">Dark</span>
         </div>
 
         <div v-else role="button" class="flex items-center gap-1" @click="$colorMode.preference = 'light'">
           <Icon name="material-symbols:light-mode-outline" />
-          <span class="leading-4 tracking-[.044rem] font-medium text-xs hidden lg:block hover:underline">Light</span>
+          <span class="hidden text-xs font-medium leading-4 tracking-[.044rem] hover:underline lg:block">Light</span>
         </div>
 
         <!-- search button -->
         <div role="button" class="flex items-center gap-1" @click="isSearchDialogOpened = true">
           <Icon name="material-symbols:search" />
-          <span class="leading-4 tracking-[.044rem] font-medium text-xs hidden lg:block hover:underline">Search</span>
+          <span class="hidden text-xs font-medium leading-4 tracking-[.044rem] hover:underline lg:block">Search</span>
         </div>
       </div>
 
       <!-- site logo -->
-      <div class="grow order-1 md:order-2">
+      <div class="order-1 grow md:order-2">
         <NuxtLink to="/" class="link-hover mx-auto block w-fit">
-          <nuxt-img :alt="site.publicationName" class="max-h-12 max-w-full h-12 w-full" :src="logo" />
+          <nuxt-img :alt="site.publicationName" class="h-12 max-h-12 w-full max-w-full" :src="logo" />
         </NuxtLink>
       </div>
 
@@ -69,7 +69,7 @@ const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
         <!-- subscriber sign in button -->
         <button
           type="button"
-          class="hidden uppercase leading-4 tracking-[.044rem] font-medium text-xs lg:block hover:underline"
+          class="hidden text-xs font-medium uppercase leading-4 tracking-[.044rem] hover:underline lg:block"
           @click="$paywall.showUserDialog()"
         >
           {{ isLoggedIn ? 'account' : 'sign in' }}
@@ -79,7 +79,7 @@ const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
         <button
           v-if="!isLoggedIn"
           type="button"
-          class="dark:border-white dark:text-white dark:hover:bg-black dark:hover:text-white py-2 px-4 text-black leading-4 tracking-[.044rem] font-medium text-sm border border-black hover:bg-black hover:text-white transition-colors rounded"
+          class="rounded border border-black px-4 py-2 text-sm font-medium leading-4 tracking-[.044rem] text-black transition-colors hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-black dark:hover:text-white"
           @click="$paywall.showUserDialog()"
         >
           Subscribe

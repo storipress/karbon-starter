@@ -29,7 +29,7 @@ const imageMap: Record<string, string> = {
     :href="url"
     target="_blank"
     rel="noreferrer noopener"
-    class="group flex overflow-hidden rounded-full w-10 h-10 justify-center items-center border border-stone-800 hover:bg-stone-800 dark:bg-zinc-900 transition-colors"
+    class="group flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-stone-800 transition-colors hover:bg-stone-800 dark:bg-zinc-900"
   >
     <Icon
       v-if="iconMap[type]"
@@ -38,7 +38,7 @@ const imageMap: Record<string, string> = {
     />
     <div
       v-else-if="imageMap[type]"
-      class="relative after:content-[''] after:absolute after:inset-0 after:hover:bg-black/20 after:transition-colors duration-500"
+      class="relative duration-500 after:absolute after:inset-0 after:transition-colors after:content-[''] after:hover:bg-black/20"
     >
       <NuxtImg :src="imageMap[type]" />
     </div>
