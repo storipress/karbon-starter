@@ -47,7 +47,7 @@ useAdvertisingHandler((segments) => {
 </template>
 
 <style lang="scss">
-.dark-mode body {
+.dark body {
   @apply bg-zinc-900 text-white;
 }
 </style>

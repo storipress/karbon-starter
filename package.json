@@ -8,8 +8,11 @@
     "postinstall": "nuxt prepare",
     "karbon": "karbon"
   },
+  "resolutions": {
+    "graphql": "16.6.0"
+  },
   "devDependencies": {
-    "@nuxt/image-edge": "1.0.0-28008586.381b906",
+    "@nuxt/image": "1.0.0-rc.1",
     "@nuxtjs/html-validator": "^1.4.0",
     "@tailwindcss/typography": "^0.5.9",
     "nuxt": "^3.6.1",
@@ -20,7 +23,7 @@
   "dependencies": {
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "@storipress/karbon": "^0.1.22",
+    "@storipress/karbon": "^0.1.28",
     "@vueuse/nuxt": "^10.2.0",
     "nprogress": "^0.2.0"
   }

@@ -12,14 +12,21 @@ watch(isSearchDialogOpened, (val) => {
 
 const colorMode = useColorMode()
 
+const isMounted = useMounted()
+
 const logo = computed(() => {
+  if (!isMounted.value) {
+    return logoLight
+  }
+
+  // check colorMode only on client to ensure use correct logo
   if (colorMode.value === 'dark') {
     return logoDark
   }
   return logoLight
 })
 
-const isLoggedIn = computed(() => $paywall?.authInfo.value)
+const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
 </script>
 
 <template>
