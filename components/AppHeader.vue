@@ -30,7 +30,7 @@ const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
 </script>
 
 <template>
-  <header class="py-5 border-b-[.5px] border-stone-200 dark:border-white;">
+  <header class="py-5 border-b-[.5px] border-stone-200 dark:border-white">
     <div
       class="grid gap-x-4 items-center grid-cols-[auto_2fr_auto] w-full m-auto px-5 max-w-[1400px] md:grid-cols-[1fr_2fr_1fr] lg:px-8"
     >

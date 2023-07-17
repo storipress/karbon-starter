@@ -41,7 +41,15 @@ const loadMore = async () => {
           <p class="mt-2 text-2xl leading-7 font-normal">{{ author.bio }}</p>
 
           <div class="mt-4 text-gray-600 dark:text-neutral-400">
-            <a v-for="(link, social) in author.socials" :key="social" :href="`https://${link}`" target="_blank" rel="noopener" class="underline mr-2">{{ social }}</a>
+            <a
+              v-for="(link, social) in author.socials"
+              :key="social"
+              :href="`https://${link}`"
+              target="_blank"
+              rel="noopener"
+              class="underline mr-2"
+              >{{ social }}</a
+            >
           </div>
         </div>
       </div>
