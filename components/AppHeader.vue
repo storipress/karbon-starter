@@ -30,7 +30,7 @@ const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
 </script>
 
 <template>
-  <header class="py-5 border-b-[.5px] border-stone-200">
+  <header class="py-5 border-b-[.5px] border-stone-200 dark:border-white;">
     <div
       class="grid gap-x-4 items-center grid-cols-[auto_2fr_auto] w-full m-auto px-5 max-w-[1400px] md:grid-cols-[1fr_2fr_1fr] lg:px-8"
     >
@@ -79,7 +79,7 @@ const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
         <button
           v-if="!isLoggedIn"
           type="button"
-          class="subscribe-btn py-2 px-4 text-black leading-4 tracking-[.044rem] font-medium text-sm border border-black hover:bg-black hover:text-white transition-colors rounded"
+          class="dark:border-white dark:text-white dark:hover:bg-black dark:hover:text-white py-2 px-4 text-black leading-4 tracking-[.044rem] font-medium text-sm border border-black hover:bg-black hover:text-white transition-colors rounded"
           @click="$paywall.showUserDialog()"
         >
           Subscribe
@@ -90,12 +90,3 @@ const isLoggedIn = computed(() => isMounted.value && $paywall?.authInfo.value)
     <SearchDialog v-show="isSearchDialogOpened" @close="isSearchDialogOpened = false" />
   </header>
 </template>
-
-<style lang="scss" scoped>
-header {
-  @apply dark:border-white;
-}
-.subscribe-btn {
-  @apply dark:border-white dark:text-white dark:hover:bg-black dark:hover:text-white;
-}
-</style>
