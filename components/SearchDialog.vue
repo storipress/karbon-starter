@@ -72,7 +72,7 @@ useIntersectionObserver($dialog, ([{ isIntersecting }]) => {
                 class="-mx-7 block px-7 py-3 font-medium text-neutral-800 hover:bg-neutral-100"
                 @click="onClose"
               >
-                {{ item.title }}
+                <span v-html="item.title" />
               </NuxtLink>
             </template>
           </AisHits>
