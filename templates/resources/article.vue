@@ -5,7 +5,7 @@ const article = setupPage({
   type: 'article',
 })
 
-useHead(() => {
+useSeoMeta(() => {
   return {
     title: article.value.title,
   }

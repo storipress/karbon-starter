@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-useHead({
+useSeoMeta({
   title: 'Latest articles',
 })
 const { preload, loadMore: loadMoreArticle } = useArticleLoader({

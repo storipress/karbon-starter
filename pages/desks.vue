@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-useHead({
+useSeoMeta({
   title: 'All desks',
 })
 const { desks } = useDesks()
