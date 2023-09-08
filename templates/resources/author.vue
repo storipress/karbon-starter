@@ -40,7 +40,7 @@ const loadMore = async () => {
             {{ author.full_name }}
           </h1>
 
-          <p class="mt-2 text-2xl font-normal leading-7">{{ author.bio }}</p>
+          <p v-html="author.bioHTML" class="mt-2 text-2xl font-normal leading-7"></p>
 
           <div class="mt-4 text-gray-600 dark:text-neutral-400">
             <a
