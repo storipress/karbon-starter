@@ -1,4 +1,10 @@
 # Karbon Starter Template
+<p align="center">
+    <a href="https://codeclimate.com/github/storipress/karbon-starter/maintainability"><img src="https://api.codeclimate.com/v1/badges/9eb162305bd5d0cc8763/maintainability" /></a>
+    <a href="https://codeclimate.com/github/storipress/karbon-starter/test_coverage"><img src="https://api.codeclimate.com/v1/badges/9eb162305bd5d0cc8763/test_coverage" /></a> 
+ </p>
+
+
 This is a repo storing starter templates for [Karbon projects](https://github.com/storipres/karbon), which allows users to quickly start a new Karbon project.
 
 ## Available Templates
