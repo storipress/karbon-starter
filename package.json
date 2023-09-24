@@ -27,6 +27,7 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@storipress/karbon": "^0.1.86",
     "@vueuse/nuxt": "^10.2.0",
+    "destr": "^2.0.1",
     "nprogress": "^0.2.0"
   }
 }

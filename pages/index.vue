@@ -6,12 +6,7 @@ const centerArticle = computed(() => articles.value?.slice(0, 1)[0])
 const leftArticle = computed(() => articles.value?.slice(1, 3))
 const rightArticle = computed(() => articles.value?.slice(3))
 
-useSeoMeta({
-  title: 'Storipress Karbon Starter',
-  description: 'Storipress Karbon Starter',
-  ogTitle: 'Storipress Karbon Starter',
-  ogDescription: 'Storipress Karbon Starter',
-})
+useHomeSeo()
 </script>
 
 <template>
